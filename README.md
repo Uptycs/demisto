@@ -1,12 +1,12 @@
-#Setting up Demisto
+# Setting up Demisto
 
 Download and install Demisto Community Edition according to Demisto instructions
 
-#Upload docker image to demisto server.
+# Upload docker image to demisto server.
 
 Use Dockerfile to create docker image and put into a public repository.
 
-#Build your own integration
+# Build your own integration
 
 Go to Settings->Integrations->Servers & Services.
 
@@ -91,7 +91,7 @@ After you have a few incidents in the side bar, uncheck the Fetches incidents bo
 
 Click the Done button.
 
-#Create SharedAgent instance
+# Create SharedAgent instance
 
 Go to Settings->Integrations->Servers & Services.
 
@@ -113,7 +113,7 @@ Click the Test button to verify success.
 
 Click the Done button.
 
-#Add your script
+# Add your script
 
 Compress killProcess.sh into a .zip file.
 
@@ -123,7 +123,7 @@ Click the +Add Tool button.
 
 Navigate to the directory with your zipped up script and upload it.
 
-#Create Demisto Automation to run your script
+# Create Demisto Automation to run your script
 
 Go to Automation.
 
@@ -149,7 +149,7 @@ In the script settings, fill in the following:
 
 Click the Save icon.
 
-#Create Demisto Playbook to run automations
+# Create Demisto Playbook to run automations
 
 Go to Playbooks.
 
