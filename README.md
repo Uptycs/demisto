@@ -41,33 +41,25 @@ In the integration settings fill in the following:
 
         Commands:
                 Command name: post-query
-                Potentially harmful: unchecked
                 Description: query Uptycs DB
                 Arguments:
                         Argument: method
                         Mandatory: checked
-                        Default: unchecked
                         Description: http methods
-                        Is array: unchecked
                         List options: GET,POST
 
                         Argument: api_call
                         Mandatory: checked
-                        Default: unchecked
                         Description: uri to connect to
-                        Is array: unchecked
 
                         Argument: query
                         Mandatory: checked
-                        Default: unchecked
                         Description: query to run
-                        Is array: unchecked
 
                         Argument: queryType
                         Mandatory: checked
-                        Default: unchecked
                         Description: type of query to run
-                        Is array: unchecked
+                        List options: global,realtime
 
                 Outputs:
                         Context Path: TestUptycsKey.items
@@ -87,7 +79,9 @@ Check the Fetches incidents box.
 
 Click the Test button to verify success.
 
-After you have a few incidents in the side bar, uncheck the Fetches incidents box.
+Click the Done button
+
+After your instance has pulled a few incidents, click the settings wheel and uncheck the Fetches incidents box.
 
 Click the Done button.
 
@@ -139,10 +133,7 @@ In the script settings, fill in the following:
         Arguments:
                 Argument: upt_pid
                 Mandatory: checked
-                Default: unchecked
-                Sensitive: unchecked
                 Description: pid for process to be killed
-                Is array: unchecked
         Advanced:
         Run On: D2 Agent
 ```
@@ -199,3 +190,19 @@ Fill in the following:
 Click the green OK button
 
 Click the Save icon.
+
+Now connect the nodes of the task boxes to create a workflow, starting with the query, followed by dropping the script on the endpoint, and finally executing the script to kill the process.
+
+Save the playbook.
+
+# Add endpoint to an incident
+
+Click on one of the incidents and go to the Work Plan.
+
+Follow demisto instructions to install a D2 Agent on the desired endpoint.
+
+Use the system_add command to add an endpoint to the incident.
+
+```sh
+/system_add host=<ip of endpoint> arch=amd64 name=<name for endpoint in UI> os=<os of endpoint> password=<Will-Prompt-After-Enter> user=<valid user on endpoint>
+```

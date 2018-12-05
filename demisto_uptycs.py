@@ -94,7 +94,7 @@ if demisto.command() == 'uptycs-example-command':
                      'Contents':{'RawKey': {'RawOtherKey': 'RawValue'}},
                      'HumanReadable': '# My Markdown',
                      'EntryContext':{'SomeKey': {'SomeOtherKey': 'SomeValue'}}})
-if demisto.command() == 'uptycs-test-command':
+if demisto.command() == 'post-query':
 # We want to supress the warnings message
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -118,27 +118,9 @@ if demisto.command() == 'uptycs-test-command':
                      'Type': entryTypes['note'],
                      'Contents':{'RawKey': {'RawOtherKey': 'RawValue'}},
                      'HumanReadable': '# Uptycs Test Connect',
-                     'EntryContext': {'TestUptycsKey':json.loads(query_results)}})
-
+                     'EntryContext': {'UptycsKey':json.loads(query_results)}})
 
     #sys.exit(0)
-
-if demisto.command() == 'get-process-hashes':
-# We want to supress the warnings message
-    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-    apifile = {
-        'key':demisto.params()['key'],
-        'secret':demisto.params()['secret'],
-        'domain':demisto.params()['domain'],
-        'customerId':demisto.params()['customerId']
-    }
-    method = demisto.args()['method']
-    api_call = demisto.args()['api_call']
-    post_data = {
-        'query':demisto.args()['query'],
-        'queryType':demisto.args()['queryType']
-    }
 
     # RestCall
     query_results = restcall(apifile, method, api_call, post_data)
