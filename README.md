@@ -1761,9 +1761,9 @@ In order to create an instance of the integration, a user API key and secret mus
 While the Demisto-Uptycs integration provides multiple commands with which to access the Uptycs backend, not all features are supported.  In particular, configuration changes are best made using the Uptycs UI.  Many of the commands have a limit set to reduce the number of rows returned from a query or api call.  The limit can be raised, or turned off, however, this may cause the queries take longer to return and potentially return large numbers of rows.  When writing queries, it can sometimes be easier to test using the Uptycs UI rather than the integration.
 
 
-##  Kill a process on an endpoint with demisto
+#  Kill a process on an endpoint with demisto
 
-# Create SharedAgent instance
+## Create SharedAgent instance
 
 Go to Settings->Integrations->Servers & Services.
 
@@ -1785,7 +1785,7 @@ Click the Test button to verify success.
 
 Click the Done button.
 
-# Add your script
+## Add your script
 
 Compress killProcess.sh into a .zip file.
 
@@ -1795,7 +1795,7 @@ Click the +Add Tool button.
 
 Navigate to the directory with your zipped up script and upload it.
 
-# Create Demisto Automation to run your script
+## Create Demisto Automation to run your script
 
 Go to Automation.
 
@@ -1818,7 +1818,7 @@ In the script settings, fill in the following:
 
 Click the Save icon.
 
-# Create Demisto Playbook to run automations
+## Create Demisto Playbook to run automations
 
 Go to Playbooks.
 
@@ -1873,7 +1873,7 @@ Now connect the nodes of the task boxes to create a workflow, starting with the 
 
 Save the playbook.
 
-# Add endpoint to an incident
+## Add endpoint to an incident
 
 Click on one of the incidents and go to the Work Plan.
 
